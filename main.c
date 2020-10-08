@@ -13,12 +13,17 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include"input.h"
 /*
  * 
  */
-int main(int argc, char** argv) {
-
+int main(int argc, char* argv[]) {
+    int data[]={0,0};  //en el primer lugar guardo la cantidad de opciones
+    int *dat;
+    dat=data;
+    input(dat,argv,argc);
+    printf("%d %d", data[0], data[1]);
+   
     return (EXIT_SUCCESS);
 }
 
