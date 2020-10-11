@@ -21,16 +21,16 @@
 int main(int argc, char* argv[]) {
     int data[]={0,0};  //en el primer lugar guardo la cantidad de opciones
     int *dat;
-    int i, b;
     dat=data;
     input(dat,argv,argc);
-    for(i=1, b=1;i<=data[0];++i){//imprimo primero las opciones
-        printf("Opcion %d: Clave: %s Valor: %s \n", i, argv[b], argv[b+1]);
-        b=b+NXDAT;
-    }//b ya queda apuntando a los parametros, x eso no la inicializo
-    for(i=1;i<=data[1];++i,++b){//imprimo los parametros
-        printf("Parametro %d: %s \n", i, argv[b]);
-    }
+    for (int i=0, a = 1; i < data[0]; ++i, a+=2){ // Imprime las opciones y el valor que poseen.
+        
+            printf("Opcion %d:\n\tClave:%s\n\tValor:%s\n", i+1, argv[a], argv[a+1]); 
+     } 
+    
+    for (int u=0; u < data[1]; ++u){
+         printf("Parametro %d: %s\n", u+1, argv[data[0]*2+u+1]); //Muestro por  pantalla los parametros
+     }
     return (EXIT_SUCCESS);
 }
 
